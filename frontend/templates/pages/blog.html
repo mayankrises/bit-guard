@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h1>Blog</h1>
+
+  <script id="page-data" type="application/json">
+  {{ data | tojson }}
+  </script>
+
+  <div id="posts"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/blog.js"></script>
+{% endblock %}

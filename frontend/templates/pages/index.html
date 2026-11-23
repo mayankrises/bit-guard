@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}AI-Powered Risk Assessment{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+
+{% block content %}
+<div class="container page-shell mt-4">
+
+  <section class="hero-card">
+    <div class="hero-content">
+      <p class="eyebrow">Bitcoin Wallet Assessment</p>
+
+      <h1 class="hero-title">
+        Know before you send.
+      </h1>
+
+      <p class="hero-subtitle">
+        BitGuard analyzes any Bitcoin wallet for behavioral risk signals including CoinJoin mixing, dust attacks, and suspicious transaction patterns, using a graph-based ML model trained on over 500k labeled wallets.
+      </p>
+    </div>
+  </section>
+
+  <div id="formAlert" class="form-alert"></div>
+
+  <section class="search-card">
+    <div class="section-header">
+      <h2>Run an assessment</h2>
+      <p>Enter a Bitcoin address to analyze.</p>
+    </div>
+
+    <form id="searchForm" class="searchForm">
+      <div class="search-bar">
+        <input
+          id="addressInput"
+          name="address"
+          placeholder="Enter a bitcoin address..."
+          autocomplete="off"
+        />
+
+        <button id="searchBtn" type="submit" class="search-button">
+          <span class="search-icon">🔍</span>
+          <span>Analyze</span>
+        </button>
+      </div>
+      <a id="mempoolLink" class="wallet-side-link disabled" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">mempool.space ↗</a>
+    </form>
+  </section>
+
+  <section class="results-grid">
+    <div class="result-card">
+      <div class="section-header">
+        <h3>Results</h3>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <label>Risk Level</label>
+          <strong id="riskProbability">Unknown</strong>
+          <span class="stat-note">The model risk bucket returned for this wallet.</span>
+        </div>
+
+        <div class="stat">
+          <label>Transactions Analyzed</label>
+          <strong id="statTxs">-</strong>
+          <span class="stat-note">Total transactions included in the analyzed response.</span>
+        </div>
+
+        <div class="stat">
+          <label>Wallets Analyzed</label>
+          <strong id="statWallets">-</strong>
+          <span class="stat-note">Connected wallets included in the analyzed network.</span>
+        </div>
+      </div>
+
+      <div class="details-panel">
+        <h4 class="details-title">Wallet Activity</h4>
+        <div class="stats wallet-activity-grid">
+          <div class="stat wallet-activity-card">
+            <div class="wallet-activity-head">
+              <label>BTC Sent</label>
+              <button type="button" class="icon-copy-btn detail-copy-btn" data-copy-target="statSent" data-copy-label="BTC Sent" aria-label="Copy BTC Sent" disabled>
+                <span aria-hidden="true">⧉</span>
+              </button>
+            </div>
+            <strong id="statSent">-</strong>
+          </div>
+
+          <div class="stat wallet-activity-card">
+            <div class="wallet-activity-head">
+              <label>BTC Received</label>
+              <button type="button" class="icon-copy-btn detail-copy-btn" data-copy-target="statReceived" data-copy-label="BTC Received" aria-label="Copy BTC Received" disabled>
+                <span aria-hidden="true">⧉</span>
+              </button>
+            </div>
+            <strong id="statReceived">-</strong>
+          </div>
+
+          <div class="stat wallet-activity-card">
+            <div class="wallet-activity-head">
+              <label>First Active Block</label>
+              <button type="button" class="icon-copy-btn detail-copy-btn" data-copy-target="statFirst" data-copy-label="First Active Block" aria-label="Copy First Active Block" disabled>
+                <span aria-hidden="true">⧉</span>
+              </button>
+            </div>
+            <strong id="statFirst">-</strong>
+          </div>
+
+          <div class="stat wallet-activity-card">
+            <div class="wallet-activity-head">
+              <label>Last Active Block</label>
+              <button type="button" class="icon-copy-btn detail-copy-btn" data-copy-target="statLast" data-copy-label="Last Active Block" aria-label="Copy Last Active Block" disabled>
+                <span aria-hidden="true">⧉</span>
+              </button>
+            </div>
+            <strong id="statLast">-</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="details-panel">
+        <div class="details-header">
+          <h4 class="details-title">Findings</h4>
+        </div>
+        <div id="findingsList" class="findings-list">
+          <div class="finding-empty">Run an analysis to see the main risk signals.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/index.js"></script>
+{% endblock %}

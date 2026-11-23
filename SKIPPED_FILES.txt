@@ -1,0 +1,4 @@
+Skipped files and directories:
+
+- .DS_Store: ignored filename
+- .venv: ignored directory

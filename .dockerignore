@@ -1,0 +1,8 @@
+.venv
+.git
+notebooks
+admin
+backend
+**/__pycache__
+*.pyc
+.DS_Store

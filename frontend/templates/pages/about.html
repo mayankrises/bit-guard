@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/css/about.css?v=2">
+{% endblock %}
+
+{% block content %}
+<div class="container page-shell mt-4">
+
+  <section class="card about-hero reveal">
+    <p class="about-eyebrow">About BitGuard</p>
+    <h1>Building safer Bitcoin transactions</h1>
+    <p class="about-subtitle">
+      BitGuard is our Software Engineering course project. We are second-year
+      undergraduate students at IIIT Lucknow, and we built it to make Bitcoin wallet
+      risk checks simpler, clearer, and easier to act on.
+    </p>
+    <div class="about-chips">
+      <span class="chip">Software Engineering Project</span>
+      <span class="chip">2nd Year · B.Tech</span>
+      <span class="chip">IIIT Lucknow</span>
+    </div>
+  </section>
+
+  <section class="about-grid reveal">
+    <div class="mini-card">
+      <span class="mini-icon" aria-hidden="true">🎓</span>
+      <h3>Who we are</h3>
+      <p>
+        A team of second-year college students at IIIT Lucknow, building BitGuard as
+        part of our Software Engineering assignment.
+      </p>
+    </div>
+    <div class="mini-card">
+      <span class="mini-icon" aria-hidden="true">🛠️</span>
+      <h3>What we practised</h3>
+      <p>
+        Requirements, design, teamwork, version control, testing and deployment, applied
+        to a real-world problem instead of a toy example.
+      </p>
+    </div>
+    <div class="mini-card">
+      <span class="mini-icon" aria-hidden="true">🛡️</span>
+      <h3>What it does</h3>
+      <p>
+        Scores a Bitcoin wallet for risk using graph analysis and machine learning,
+        and explains the signals behind the score.
+      </p>
+    </div>
+  </section>
+
+  <section class="card about-content reveal">
+    <div class="about-block">
+      <h2>Why we built BitGuard</h2>
+      <p>
+        Our professors asked us to build a complete software system, and we wanted a
+        problem that actually matters. Cryptocurrency fraud causes real financial harm,
+        and Bitcoin transactions are generally irreversible once sent. Recovery is often
+        difficult or impossible. Many malicious wallets also operate for a long time
+        before they are identified, so users may send funds without realizing the risk.
+      </p>
+      <p>
+        Existing approaches often depend on static blacklists of wallets that have
+        already been caught. Many current tools are also expensive, enterprise-focused,
+        or too manual for ordinary users to rely on at the moment they need to make a
+        transaction decision.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h2>Our goal</h2>
+      <p>
+        The goal of BitGuard is to provide an accessible way to assess Bitcoin wallet
+        risk using graph-based behavioral analysis and structured signals. Instead of
+        only checking whether a wallet appears on a blacklist, BitGuard helps users
+        see whether a wallet shows patterns that may be associated with risky or
+        malicious behavior.
+      </p>
+      <p>
+        In short, we want wallet safety checks to be faster, clearer, and easier to use
+        before a transaction happens, not after the funds are already gone.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h2>Who BitGuard is for</h2>
+      <p>
+        Everyday or less technical users who want a quick way to check whether a wallet
+        looks safe before sending money, for example an address copied from a website
+        or a message. It can also be useful for small wallets, exchanges and other
+        platforms that want a lightweight risk-scoring tool without adopting a full
+        enterprise blockchain forensics suite.
+      </p>
+    </div>
+
+    <div class="about-block">
+      <h2>A note on this project</h2>
+      <p>
+        BitGuard is a student project built for learning. Its risk scores are
+        informational only and should not be treated as financial or legal advice.
+        We welcome feedback, so please reach out through our
+        <a href="/contact">contact page</a>.
+      </p>
+    </div>
+  </section>
+</div>
+{% endblock %}
