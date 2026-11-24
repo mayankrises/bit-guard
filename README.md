@@ -1,6 +1,6 @@
 # BitGuard
 
-BitGuard is a Bitcoin wallet risk-scoring and blockchain transaction analysis platform. It combines a Neo4j graph database for multi-hop transaction subgraphs, a machine learning risk-scoring pipeline with SHAP explainability, and a web interface.
+BitGuard is a Bitcoin wallet risk-scoring and blockchain transaction analysis platform. It combines a Neo4j graph database for multi-hop transaction subgraphs, a machine learning risk-scoring pipeline with SHAP explainability, and a web interface. 
 
 ---
 
